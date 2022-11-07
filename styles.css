@@ -1,0 +1,62 @@
+.container{
+    align-items: center;
+    margin-top: 50px;
+    max-width: 100%;
+}
+.row{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+.card.body{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.button{
+    width: 100%;
+    box-shadow: 5px 5px 1px lightgray;
+}
+.card-title{
+    font-size: 25px;
+    color: gray;
+    margin-bottom: auto;
+}
+.day{
+    color: gray;
+    margin-bottom: auto;
+}
+.type{
+    color: gray;
+    margin-bottom: auto;
+}
+.insider{
+    margin-top: 0px;
+}
+.temp, #numberTemp{
+    font-size: 60px;
+    text-align: left;
+    display: inline-flex;
+}
+.grades{
+    font-size: 18px;
+    margin-top: 20px;
+}
+span{
+    font-size: 23px;
+}
+#data{
+    text-align: left;
+}
+#precipitation,
+#humidity,
+#wind{
+    margin-bottom: 0.2rem;
+}
+#current{
+    background-color: green;
+}
+
+
+
