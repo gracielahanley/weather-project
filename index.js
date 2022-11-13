@@ -1,7 +1,8 @@
 const apiKey = `597c40c39084687093b091cd48b366f8`;
 
 function getCity() {
-    const city = document.querySelector("#inputCity").value;
+    const value = document.querySelector("#inputCity").value;
+    const city = value.toLowerCase()
     console.log(city);
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     console.log(apiUrl);
