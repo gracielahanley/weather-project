@@ -7,7 +7,6 @@
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    
 }
 .card.body{
     margin-top: 20px;
@@ -56,6 +55,15 @@ span{
 }
 #current{
     background-color: green;
+}
+.foot{
+    font-size: small;
+}
+.footer{
+    display: inline;
+    margin-left: 25.5%;
+    border: none;
+    
 }
 
 
