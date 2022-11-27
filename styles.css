@@ -1,70 +1,94 @@
-.container{
+.container {
     align-items: center;
     margin-top: 50px;
     max-width: 100%;
 }
-.row{
+
+.row {
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
 }
-.card.body{
+
+.card.body {
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
 }
-.button{
+
+.button {
     width: 100%;
     box-shadow: 5px 5px 1px lightgray;
 }
-.card-title{
+
+.card-title {
     font-size: 25px;
     color: gray;
     margin-bottom: auto;
 }
-.day{
+
+.day {
     color: gray;
     margin-bottom: auto;
 }
-.type{
+
+.type {
     color: gray;
     margin-bottom: auto;
 }
-.insider{
+
+.insider {
     margin-top: 0px;
 }
-.temp, #numberTemp{
+
+.temp,
+#numberTemp {
     font-size: 60px;
     text-align: left;
     display: inline-flex;
 }
-.grades{
+
+.grades {
     font-size: 18px;
     margin-top: 20px;
 }
-span{
+
+span {
     font-size: 23px;
 }
-#data{
+
+#data {
     text-align: left;
 }
+
 #precipitation,
 #humidity,
-#wind{
+#wind {
     margin-bottom: 0.2rem;
 }
-#current{
+
+#current {
     background-color: green;
 }
-.foot{
+
+.foot {
     font-size: small;
 }
-.footer{
+
+.footer {
     display: inline;
     margin-left: 25.5%;
     border: none;
-    
+
 }
 
+.active {
+    color: black;
+    cursor: default;
+    text-decoration: none;
+}
 
-
+.active:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
