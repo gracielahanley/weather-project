@@ -27,6 +27,8 @@ function frontChanges(value, id) {
 let temp = null;
 
 function weather(response) {
+    const lon = response.data.coordinates.longitude;
+    const lat = response.data.coordinates.latitude;
     temp = Math.round(response.data.temperature.current);
     frontChanges(temp, '#numberTemp')
     const cityName = response.data.city;
@@ -38,6 +40,8 @@ function weather(response) {
     const wind = response.data.wind.speed;
     frontChanges(`Wind: ${wind}km/h`, "#wind");
     document.getElementById('icon').src = response.data.condition.icon_url;
+    const urlDaily = `https://api.shecodes.io/weather/v1/forecast?lat=${lat}&lon=${lon}&key=${apiKey}&units=metric`;
+    axios.get(urlDaily).then(displayForecast)
 }
 
 const button = document.querySelector(".btn");
@@ -54,6 +58,7 @@ function success(pos) {
 function positionData() {
     const position = navigator.geolocation.getCurrentPosition(success);
 }
+
 function currentCity(lat, lon) {
     const city = document.querySelector("#inputCity").value;
     const apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
@@ -84,5 +89,34 @@ function showCelsius(event) {
 
 const celsiusElement = document.querySelector("#celsius");
 celsiusElement.addEventListener("click", showCelsius);
+
+function displayForecast(response) {
+    const daily = response.data.daily;
+    daily.shift();
+    const forecastElement = document.querySelector("#forecast");
+    let forecastHTML = ``;
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    daily.forEach(function (data) {
+        const time = new Date(data.time * 1000);
+        const day = days[time.getDay()];
+        const tempMax = Math.round(data.temperature.maximum);
+        const tempMin = Math.round(data.temperature.minimum);
+        const iconUrl = data.condition.icon_url;
+        forecastHTML = forecastHTML + `                  
+    <div class="col-2">
+    <div class="weather-forecast-date">
+        ${day}
+    </div>
+    <div>
+        <img src="${iconUrl}" alt="" width="36">
+    </div>
+    <div class="weather-forecast-temperatures">
+        <span class="temp-max">${tempMax}°</span>
+        <span class="temp-min">${tempMin}°</span>
+    </div>
+</div>`
+    })
+    forecastElement.innerHTML = forecastHTML;
+}
 
 positionData();
